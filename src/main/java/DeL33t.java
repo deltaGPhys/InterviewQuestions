@@ -9,10 +9,6 @@ public class DeL33t {
 
         private char realChar;
 
-        public char getValue() {
-            return this.realChar;
-        }
-
         L33tSub(char value) {
             this.realChar = value;
         }
