@@ -1,6 +1,9 @@
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import static org.junit.Assert.*;
 
 public class ShellSortTest {
@@ -14,7 +17,7 @@ public class ShellSortTest {
         ShellSort.printArray(array);
         ShellSort.printArray(expected);
 
-        //Assert.assertArrayEquals(expected, array);
+        Assert.assertArrayEquals(expected, array);
     }
 
     @Test
@@ -26,7 +29,7 @@ public class ShellSortTest {
         ShellSort.printArray(array);
         ShellSort.printArray(expected);
 
-        //Assert.assertArrayEquals(expected, array);
+        Assert.assertArrayEquals(expected, array);
     }
 
     @Test
@@ -38,7 +41,7 @@ public class ShellSortTest {
         ShellSort.printArray(array);
         ShellSort.printArray(expected);
 
-        //Assert.assertArrayEquals(expected, array);
+        Assert.assertArrayEquals(expected, array);
     }
 
     @Test
@@ -50,8 +53,19 @@ public class ShellSortTest {
         ShellSort.printArray(array);
         ShellSort.printArray(expected);
 
-        //Assert.assertArrayEquals(expected, array);
+        Assert.assertArrayEquals(expected, array);
     }
 
+    @Test
+    public void shellSort5() {
+        int[] array = new int[] {20,2,12,6,7,9,3,10,5,1,13,4};
+        ShellSort.shellSort(array);
+        int[] expected = new int[] {1,2,3,4,5,6,7,9,10,12,13,20};
+
+        ShellSort.printArray(array);
+        ShellSort.printArray(expected);
+
+        Assert.assertArrayEquals(expected, array);
+    }
 
 }

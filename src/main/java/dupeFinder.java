@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+
 public class dupeFinder {
 
     public static int[] addToArray (int[] arr, int index, int toAdd) {
@@ -17,6 +21,25 @@ public class dupeFinder {
                 }
             }
         }
+        return dupes;
+    }
+
+    public static int[] findDupesMap (int[] arr) {
+        ArrayList<Integer> duplicates = new ArrayList<>();
+        HashMap<Integer,Integer> map = new HashMap<>();
+
+        for (int i = 0; i < arr.length; i++) {
+            Integer result = map.putIfAbsent(arr[i],1);
+            if (result != null) {
+                duplicates.add(i);
+            }
+        }
+
+        int[] dupes = new int[duplicates.size()];
+        for (int i = 0; i < duplicates.size(); i++) {
+            dupes[i] = duplicates.get(i);
+        }
+
         return dupes;
     }
 }

@@ -76,4 +76,22 @@ public class dupeFinderTest {
         int[] actual = dupeFinder.findDupes(arr);
         Assert.assertArrayEquals(expected, actual);
     }
+
+
+
+    @Test
+    public void findDupes3a() {
+        int[] arr = new int[] {3,3,5,6,7,8,9,5};
+        int[] expected = new int[] {3,5};
+        int[] actual = dupeFinder.findDupesMap(arr);
+        Assert.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void findDupes4a() {
+        int[] arr = new int[] {1,2,3,4,5,6,5,4,3,2,1};
+        int[] expected = new int[] {1,2,3,4,5};
+        int[] actual = dupeFinder.findDupesMap(arr);
+        Assert.assertArrayEquals(expected, actual);
+    }
 }
