@@ -40,9 +40,22 @@ public class RecentApplicationsTest {
     }
 
     @Test
-    @Parameters({"2020-04-05,2021-02-04","2030-01-01,null","2020-03-04,2021-02-04","2018-01-02,2018-01-03","2015-01-01,null","2019-02-04,2018-01-03"})
+    @Parameters({"2020-04-05,2021-02-04","2020-03-04,2020-03-05","2018-01-02,2018-01-03","2019-02-04,2020-01-03"})
     public void calcReevalDate(String date, String reevalDate) {
         recentApplications.calcRecentApps(LocalDate.parse(date));
         Assert.assertEquals(LocalDate.parse(reevalDate),recentApplications.getReevalDate());
+    }
+
+    @Test
+    public void calcReevalDateBefore() {
+        recentApplications.calcRecentApps(LocalDate.parse("2015-01-01"));
+        Assert.assertEquals(null, recentApplications.getReevalDate());
+    }
+
+
+    @Test
+    public void calcReevalDateWayAfter() {
+        recentApplications.calcRecentApps(LocalDate.parse("2030-01-01"));
+        Assert.assertEquals(null, recentApplications.getReevalDate());
     }
 }
